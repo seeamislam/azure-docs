@@ -81,6 +81,17 @@ To set up your IoT Hub with ADR integration and certificate management, you can 
 
 :::zone-end
 
+## Delete resources
+
+To delete your ADR namespace, you must first delete any IoT Hubs instances linked to the namespace.
+
+```azurecli-interactive
+az iot hub delete --name <HUB_NAME> --resource-group <RESOURCE_GROUP_NAME>
+az iot adr ns delete --name <NAMESPACE_NAME> --resource-group <RESOURCE_GROUP_NAME>
+az iot dps delete --name <DPS_NAME> --resource-group <RESOURCE_GROUP_NAME> 
+az identity delete --name <USER_IDENTITY> --resource-group <RESOURCE_GROUP_NAME>
+```
+
 ## Next steps
 
 At this point, your IoT Hub with ADR integration and certificate management is set up and ready to use. You can now start onboarding your IoT devices to the hub using the Device Provisioning Service (DPS) instance and manage your IoT devices securely using the policies and enrollments you have set up.
