@@ -297,15 +297,3 @@ The following example creates a policy named "custom-policy" with a subject of "
 az iot adr ns policy create --name "custom-policy" --namespace <NAMESPACE_NAME> --resource-group <RESOURCE_GROUP_NAME> --cert-subject "CN=TestDevice" --cert-validity-days "30"
 ```
 
-### Delete resources
-
-To delete your ADR namespace, you must first delete any IoT Hubs and DPS instances linked to the namespace.
-
-```azurecli-interactive
-az iot hub delete --name <HUB_NAME> --resource-group <RESOURCE_GROUP_NAME>
-az iot adr ns delete --name <NAMESPACE_NAME> --resource-group <RESOURCE_GROUP_NAME>
-az iot dps delete --name <DPS_NAME> --resource-group <RESOURCE_GROUP_NAME> 
-az identity delete --name <USER_IDENTITY> --resource-group <RESOURCE_GROUP_NAME>
-```
-
-
